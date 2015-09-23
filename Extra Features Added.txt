@@ -1,0 +1,5 @@
+1 Specify how many words, special characters, and numbers
+2 Max length feature
+3 Error checking added - field validation
+4 html validator - processed
+5 css validator - processed

@@ -8,7 +8,12 @@
 				'Apples',
 				'Oranges',
 				'Milk',
-				'Glue'
+				'Glue',
+				'Staple',
+				'Pig',
+				'Boy',
+				'Goat',
+				'Cow'
 			);
 			//--setup for word string
 			for ($x = 1; $x <= $intNumOfWords; $x++) {
@@ -26,7 +31,9 @@
 				'*',
 				'+',
 				'=',
-				'%'
+				'%',
+				'@',
+				'#'
 			);
 			//setup for symbol string
 			for ($x = 1; $x <= $intNumOfSymbols; $x++) {
@@ -44,7 +51,13 @@
 				'1',
 				'2',
 				'3',
-				'4'
+				'4',
+				'5',
+				'6',
+				'7',
+				'8',
+				'9',
+				'0'
 			);
 			//setup for symbol string
 			for ($x = 1; $x <= $intNumOfNumbers; $x++) {
