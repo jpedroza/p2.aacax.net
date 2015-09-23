@@ -10,15 +10,43 @@
 <head>
 <meta charset='utf-8'>
 <title>Password Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Fontin">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <?php
 	$characters = 20;
 	$password = '';
 ?>
 
+<style>
+	h1 {
+		text-align:center;
+	}
+
+	h3 {
+		text-align:center;
+	}
+
+	div.container {
+		margin-top: 40px;
+	}
+	
+	body {
+        font-family: 'Fontin';
+        font-size: 20px;
+    }
+	
+</style>
+
 </head>
 
 <body>
-<h1>Welcome to My Password Generator</h1>
+<div class="container">
+  <div class="jumbotron">
+<h1>Welcome to My Password Generator</h1><hr />
 <h3>Description of This App</h3>
 <p>
 Hello, this application was created to help users come up with a quick easy way to create complex passwords for everyone to enhance Cybersecurity by giving you a few recommendations for complex passwords (e.g., passwords that have words, special characters, and numbers). A "XKCD" password is a simple concept I learned from a comic written back in August 10, 2011?"
@@ -31,12 +59,13 @@ You can have the default password at the way bottom, or you can generate a custo
 Tell us want you want, and we will make a custom password for you!
 </p>
 <form method='POST' action='index.php'>
-    <input type='number' name='intWords' min="1" max="10">How many words do you want (e.g., 1 to 10)?<br>
-    <input type='number' name='intSpecialCharacters' min="1" max="10">How many Special Characters do you want (e.g., 1 to 10)?<br>
-    <input type='number' name='intNumbers' min="1" max="10">How many Numbers do you want (e.g., 1 to 10)?<br>	
+    <input type='number' name='intWords' min="1" max="10"> How many words do you want (e.g., 1 to 10)?<br>
+    <input type='number' name='intSpecialCharacters' min="1" max="10"> How many Special Characters do you want (e.g., 1 to 10)?<br>
+    <input type='number' name='intNumbers' min="1" max="10"> How many Numbers do you want (e.g., 1 to 10)?<br>	
     <div id="limitCharacters">
-		<input type='number' name='intTotalCharacters' min="1" max="50">How many Total Characters do you want (e.g., 1 to 50)?<br>	
+		<input type='number' name='intTotalCharacters' min="1" max="50"> How many Total Characters do you want (e.g., 1 to 50)?<br>	
     </div>
+	<br />
 	<input type='submit' value='Generate'><br>
 </form>
 
@@ -56,7 +85,8 @@ Tell us want you want, and we will make a custom password for you!
 	
 
 
-
+</div>
+</div>
 
 </body>
 </html>
