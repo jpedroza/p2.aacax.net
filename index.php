@@ -19,7 +19,13 @@
 <?php
 	$characters = 20;
 	$password = '';
+	$_POST['intWords'] = 3;
+	$_POST['intSpecialCharacters'] = 3;
+	$_POST['intNumbers'] = 4;
+	$_POST['intTotalCharacters'] = 30;
 ?>
+
+
 
 <style>
 	h1 {
@@ -77,14 +83,16 @@ Tell us want you want, and we will make a custom password for you!
     <!-- These programming hooks are for debugging -->
 	
 	<?php 
-
+		echo "<div id='hideblock'>";
 		//echo "This is the value passed: " . $_POST['intWords']; echo "<br>";
 		//echo "This is the value passed: " . $_POST['intSpecialCharacters']; echo "<br>";	
 		//echo "This is the value passed: " . $_POST['intNumbers']; echo "<br>";	
 		//echo "Trim your password to how many characters: " . $_POST['intTotalCharacters']; echo "<br>";
 		$newPassword = getRandomWordString($_POST['intWords']) . getRandomSymbols($_POST['intSpecialCharacters']) . getRandomNumbers($_POST['intNumbers']);
 		echo "<h3 class='pass'>The Password is: " . $newPassword . "</h3>";
+		
 		echo "<h3 class='pass'>A Trimmed Version of the Password is: " . substr($newPassword, 0, $_POST['intTotalCharacters']) . "</h3>";
+		echo "</div>";
 	?>
 	
 
