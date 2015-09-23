@@ -40,7 +40,7 @@ Tell us want you want and we will make a custom one for you!
 		echo "This is the value passed: " . $_POST['intSpecialCharacters']; echo "<br>";	
 		echo "This is the value passed: " . $_POST['intNumbers']; echo "<br>";	
 		echo "This is the value passed: " . $_POST['limitChar']; echo "<br>";
-		echo "This is the value passed: " . $_POST['intTotalCharacters']; echo "<br>";
+		echo "Trim to this many characters: " . $_POST['intTotalCharacters']; echo "<br>";
 		echo "The returned value is " . getRandomWordString(2);
 	?>
 
@@ -49,8 +49,13 @@ Tell us want you want and we will make a custom one for you!
 <hr />
 <div id="passwordBox">
 	<p> 
-	Your password is <?php echo $password; ?>
+	Your password is <?php echo $password; ?> which is <?php	echo strlen($password); ?> characters.
 	</p> 
+	The trimmed password is: <?php echo substr($password, 0, strlen($password) - $_POST['intTotalCharacters']); ?>
+	<p>
+	
+	</p>
+	
 </div>
 </body>
 </html>

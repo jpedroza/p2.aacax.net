@@ -56,5 +56,6 @@
 	}	
 	
 	$password = getRandomWordString(6) . getRandomSymbols(6) . getRandomNumbers(8);
+
 	
 ?>
