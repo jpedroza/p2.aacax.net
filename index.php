@@ -6,7 +6,7 @@
 <?php require 'logic.php'; ?>
 
 <!DOCTYPE html>
-<html>
+<html  onload="javascript: submitform()">
 <head>
 <meta charset='utf-8'>
 <title>Password Generator</title>
@@ -16,14 +16,7 @@
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Fontin">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<?php
-	$characters = 20;
-	$password = '';
-	$_POST['intWords'] = 3;
-	$_POST['intSpecialCharacters'] = 3;
-	$_POST['intNumbers'] = 4;
-	$_POST['intTotalCharacters'] = 30;
-?>
+
 
 
 
@@ -72,9 +65,7 @@ Tell us want you want, and we will make a custom password for you!
     <input type='number' name='intWords' min="1" max="10"> How many words do you want (e.g., 1 to 10)?<br>
     <input type='number' name='intSpecialCharacters' min="1" max="10"> How many Special Characters do you want (e.g., 1 to 10)?<br>
     <input type='number' name='intNumbers' min="1" max="10"> How many Numbers do you want (e.g., 1 to 10)?<br>	
-    <div id="limitCharacters">
-		<input type='number' name='intTotalCharacters' min="1" max="50"> How many Total Characters do you want (e.g., 1 to 50)?<br>	
-    </div>
+	<input type='number' name='intTotalCharacters' min="1" max="50"> How many Total Characters do you want (e.g., 1 to 50)?<br>	
 	<br />
 	<input type='submit' value='Generate'><br>
 </form>
@@ -88,10 +79,10 @@ Tell us want you want, and we will make a custom password for you!
 		//echo "This is the value passed: " . $_POST['intSpecialCharacters']; echo "<br>";	
 		//echo "This is the value passed: " . $_POST['intNumbers']; echo "<br>";	
 		//echo "Trim your password to how many characters: " . $_POST['intTotalCharacters']; echo "<br>";
-		$newPassword = getRandomWordString($_POST['intWords']) . getRandomSymbols($_POST['intSpecialCharacters']) . getRandomNumbers($_POST['intNumbers']);
+		$newPassword = getRandomWordString(!empty($_POST['intWords'])?($_POST['intWords']):1) . getRandomSymbols(!empty($_POST['intSpecialCharacters'])?($_POST['intSpecialCharacters']):1) . getRandomNumbers(!empty($_POST['intNumbers'])?($_POST['intNumbers']):1);
 		echo "<h3 class='pass'>The Password is: " . $newPassword . "</h3>";
 		
-		echo "<h3 class='pass'>A Trimmed Version of the Password is: " . substr($newPassword, 0, $_POST['intTotalCharacters']) . "</h3>";
+		echo "<h3 class='pass'>A Trimmed Version of the Password is: " . substr($newPassword, 0, (!empty($_POST['intTotalCharacters'])?($_POST['intTotalCharacters']):12)) . "</h3>";
 		echo "</div>";
 	?>
 	
