@@ -25,6 +25,10 @@
 	h1 {
 		text-align:center;
 	}
+	
+	.pass {
+		color:blue;
+	}
 
 	h3 {
 		text-align:center;
@@ -79,8 +83,8 @@ Tell us want you want, and we will make a custom password for you!
 		//echo "This is the value passed: " . $_POST['intNumbers']; echo "<br>";	
 		//echo "Trim your password to how many characters: " . $_POST['intTotalCharacters']; echo "<br>";
 		$newPassword = getRandomWordString($_POST['intWords']) . getRandomSymbols($_POST['intSpecialCharacters']) . getRandomNumbers($_POST['intNumbers']);
-		echo "<h3>The Password is: " . $newPassword . "</h3>";
-		echo "<h3>A Trimmed Version of the Password is: " . substr($newPassword, 0, $_POST['intTotalCharacters']) . "</h3>";
+		echo "<h3 class='pass'>The Password is: " . $newPassword . "</h3>";
+		echo "<h3 class='pass'>A Trimmed Version of the Password is: " . substr($newPassword, 0, $_POST['intTotalCharacters']) . "</h3>";
 	?>
 	
 
