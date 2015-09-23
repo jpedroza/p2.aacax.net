@@ -41,7 +41,7 @@ Tell us want you want and we will make a custom one for you!
 		echo "This is the value passed: " . $_POST['intNumbers']; echo "<br>";	
 		echo "This is the value passed: " . $_POST['limitChar']; echo "<br>";
 		echo "This is the value passed: " . $_POST['intTotalCharacters']; echo "<br>";
-		
+		echo "The returned value is " . getRandomWordString(2);
 	?>
 
 
